@@ -12,6 +12,14 @@ return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
+  -- smooth experience while using jj as escape
+  {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
