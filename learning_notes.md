@@ -23,3 +23,10 @@ leader + fb : fzf file in buffer
 leader + sh : open command help
 leader + sk : search key maps
 leader + sr : search and replace
+leader + fT : open a quick terminal
+gc : to comment multiple line
+gc + o/O : add comment below above
+leader gB : git browse to remote repo
+<!--this is a comment-->
+gc : comment multiple line
+leader + p : open yank history
