@@ -30,3 +30,4 @@ leader gB : git browse to remote repo
 <!--this is a comment-->
 gc : comment multiple line
 leader + p : open yank history
+leader + ghb : git blame line
