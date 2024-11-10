@@ -3,7 +3,9 @@ return {
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require("harpoon"):setup()
+    require("harpoon").setup({
+      ui = true,
+    })
   end,
   keys = {
     {
@@ -16,8 +18,7 @@ return {
     {
       "<leader>h",
       function()
-        local harpoon = require("harpoon")
-        harpoon.ui:toggle_quick_menu(harpoon:list())
+        require("harpoon.ui").toggle_quick_menu()
       end,
       desc = "harpoon quick menu",
     },
