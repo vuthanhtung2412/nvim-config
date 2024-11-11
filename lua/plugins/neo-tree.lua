@@ -3,7 +3,6 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, opts)
       -- Add "document_symbols" to the sources list
-      opts.sources = opts.sources or {}
       table.insert(opts.sources, "document_symbols")
     end,
     keys = {
