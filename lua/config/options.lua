@@ -3,3 +3,4 @@
 -- Add any additional options here
 vim.g.lazyvim_python_lsp = "pyright"
 vim.opt.winbar = "%=%m %f"
+vim.g.autoformat = false
