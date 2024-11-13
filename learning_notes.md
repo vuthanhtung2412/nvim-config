@@ -31,3 +31,4 @@ leader gB : git browse to remote repo
 gc : comment multiple line
 leader + p : open yank history
 leader + ghb : git blame line
+v : to quit and enter visual mode
