@@ -32,3 +32,4 @@ gc : comment multiple line
 leader + p : open yank history
 leader + ghb : git blame line
 v : to quit and enter visual mode
+leader + wm : to maximize (temporally full screen a window)
