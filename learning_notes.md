@@ -1,5 +1,9 @@
 # List of useful commands that I learnt [source](https://youtu.be/N93cTbtLCIM?si=88rnliVJ6DaxQABw)
 
+## DAP
+## Find and Replace 
+## LSP
+
 ciw : replace word under the cursor
 leader + , : change file in the buffer
 leader + | : right split
