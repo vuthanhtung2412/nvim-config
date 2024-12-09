@@ -20,6 +20,7 @@ return {
     -- Show notification on run
     show_notification = false,
     -- Show response in popup or split
+    -- Auto split display when code is error
     mode = 'popup',
     -- Default formatter
     formatters = {
