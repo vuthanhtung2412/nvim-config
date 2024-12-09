@@ -1,9 +1,6 @@
-# List of useful commands that I learnt [source](https://youtu.be/N93cTbtLCIM?si=88rnliVJ6DaxQABw)
+# Learning notes
 
-## DAP
-## Find and Replace 
-## LSP
-
+## Useful command that I learnt
 ciw : replace word under the cursor
 leader + , : change file in the buffer
 leader + | : right split
@@ -30,10 +27,33 @@ leader + sr : search and replace
 leader + fT : open a quick terminal
 gc : to comment multiple line
 gc + o/O : add comment below above
-leader gB : git browse to remote repo
 <!--this is a comment-->
+leader gB : git browse to remote repo
 gc : comment multiple line
 leader + p : open yank history
 leader + ghb : git blame line
 v : to quit and enter visual mode
 leader + wm : to maximize (temporally full screen a window)
+
+## What to learn
+
+### DB
+
+### Tmux window switch
+
+### Open window in a split
+
+### Hurl
+
+### Obsidian Integration
+
+### How to navigate with buffer and Harpoon
+
+### Git Worktree
+
+### Obsidian
+
++ Excalidraw
++ Dataview
++ Zetllrkasen
++ Git
