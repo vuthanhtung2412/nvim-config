@@ -18,9 +18,9 @@ return {
     -- Show debugging info
     debug = false,
     -- Show notification on run
-    -- Show response in popup or split
     show_notification = false,
-    mode = "split",
+    -- Show response in popup or split
+    mode = 'popup',
     -- Default formatter
     formatters = {
       json = { "jq" }, -- Make sure you have install jq in your system, e.g: brew install jq
