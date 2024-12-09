@@ -1,6 +1,7 @@
 # Learning notes
 
 ## Useful command that I learnt
+
 ciw : replace word under the cursor
 leader + , : change file in the buffer
 leader + | : right split
@@ -39,7 +40,11 @@ leader + wm : to maximize (temporally full screen a window)
 
 ### DB
 
++ toggle DBUI : leader + D
+
 ### Tmux window switch
+
+### I3
 
 ### Open window in a split
 
