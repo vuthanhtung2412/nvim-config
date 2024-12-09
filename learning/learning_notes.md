@@ -35,6 +35,7 @@ leader + p : open yank history
 leader + ghb : git blame line
 v : to quit and enter visual mode
 leader + wm : to maximize (temporally full screen a window)
+:TSInstallInfo : to list all supported language by TreeSitter
 
 ## What to learn
 
@@ -56,6 +57,7 @@ leader + wm : to maximize (temporally full screen a window)
 ### Hurl
 
 + go to ~/.local/share/nvim/lazy/hurl.nvim
++ install code coloring for .hurl file with `:TSInstall hurl`
 
 ### Obsidian Integration
 
