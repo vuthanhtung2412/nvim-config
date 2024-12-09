@@ -44,11 +44,18 @@ leader + wm : to maximize (temporally full screen a window)
 
 ### Tmux window switch
 
++ Ctrl + h/j/k/l : to switch between tmux window
+
 ### I3
 
-### Open window in a split
+### Open telescope select in a split
+
++ C-x : horizontal split
++ C-v : vertical split
 
 ### Hurl
+
++ go to ~/.local/share/nvim/lazy/hurl.nvim
 
 ### Obsidian Integration
 
