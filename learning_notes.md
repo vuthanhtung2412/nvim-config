@@ -1,11 +1,19 @@
 # Learning notes
 
 <!--toc:start-->
-
 - [Learning notes](#learning-notes)
   - [Useful command that I learnt](#useful-command-that-i-learnt)
-  - [What to learn](#what-to-learn) - [DB](#db) - [Tmux window switch](#tmux-window-switch) - [I3](#i3) - [Open telescope select in a split](#open-telescope-select-in-a-split) - [Hurl](#hurl) - [How to navigate with Harpoon](#how-to-navigate-with-harpoon) - [Git Worktree](#git-worktree) - [Obsidian Integration](#obsidian-integration) - [Obsidian](#obsidian)
-  <!--toc:end-->
+  - [What to learn](#what-to-learn)
+    - [DB](#db)
+    - [Tmux window switch](#tmux-window-switch)
+    - [I3](#i3)
+    - [Open telescope select in a split](#open-telescope-select-in-a-split)
+    - [Hurl](#hurl)
+    - [How to navigate with Harpoon](#how-to-navigate-with-harpoon)
+    - [LazyGit](#lazygit)
+    - [Obsidian Integration](#obsidian-integration)
+    - [Obsidian](#obsidian)
+<!--toc:end-->
 
 ## Useful command that I learnt
 
@@ -83,6 +91,7 @@ In a markdown file, you can use leader + ca to generate table of content
 
 a : to stage lazy git all at once
 visually select + space : partial stage
+Leader + ghd : to view git diff with most recent commit
 
 Cherry pick workflow
 
@@ -102,10 +111,15 @@ Benefits of worktree:
 - You can have multiple branches checked out at the same time.
 - Don't have to stash changes or commit to switch branches.
 
-How to:
+How to (while waiting for this issue to be resloved <https://github.com/kdheepak/lazygit.nvim/issues/137>):
 
-- `git clone --bare`
-- add worktree with lg
+- create a folder name `<project_name> + worktree`
+- clone the project on that folder
+- create different git worktree on that folder
+- when you compare branches, open a split view with tmux
+  (or nv -d <branch+file path 1> <branch+file path 2>)
+
+### Going to git remote ref
 
 ### Obsidian Integration
 
