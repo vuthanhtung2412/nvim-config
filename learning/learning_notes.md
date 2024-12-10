@@ -1,19 +1,11 @@
 # Learning notes
 
 <!--toc:start-->
+
 - [Learning notes](#learning-notes)
   - [Useful command that I learnt](#useful-command-that-i-learnt)
-  - [What to learn](#what-to-learn)
-    - [DB](#db)
-    - [Tmux window switch](#tmux-window-switch)
-    - [I3](#i3)
-    - [Open telescope select in a split](#open-telescope-select-in-a-split)
-    - [Hurl](#hurl)
-    - [How to navigate with Harpoon](#how-to-navigate-with-harpoon)
-    - [Git Worktree](#git-worktree)
-    - [Obsidian Integration](#obsidian-integration)
-    - [Obsidian](#obsidian)
-<!--toc:end-->
+  - [What to learn](#what-to-learn) - [DB](#db) - [Tmux window switch](#tmux-window-switch) - [I3](#i3) - [Open telescope select in a split](#open-telescope-select-in-a-split) - [Hurl](#hurl) - [How to navigate with Harpoon](#how-to-navigate-with-harpoon) - [Git Worktree](#git-worktree) - [Obsidian Integration](#obsidian-integration) - [Obsidian](#obsidian)
+  <!--toc:end-->
 
 ## Useful command that I learnt
 
@@ -80,13 +72,40 @@ In a markdown file, you can use leader + ca to generate table of content
 
 ### How to navigate with Harpoon
 
-+ **Buffer:** A file or text loaded in memory.
-+ **Window:** A viewport displaying a buffer. Each window has its own jump list.
-+ **Tab:** A collection of windows 
-+ **Jump List:** Tracks cursor movements to significant locations in a window.
-+ **Harpoon:** Bookmark manager for buffers/files. Quickly switch to frequently used files in the current window.
+- **Buffer:** A file or text loaded in memory.
+- **Window:** A viewport displaying a buffer. Each window has its own jump list.
+- **Tab:** A collection of windows
+- **Jump List:** Tracks cursor movements to significant locations in a window.
+- **Harpoon:** Bookmark manager for buffers/files. Quickly switch to frequently
+  used files in the current window.
 
-### Git Worktree
+### LazyGit
+
+a : to stage lazy git all at once
+visually select + space : partial stage
+
+Cherry pick workflow
+
+- go to commits tabs
+- C to cherry pick
+- switch to the target branch
+- V to paste the commits
+
+Interactive rebase workflow
+
+- go to commits tabs
+- e to rebase
+
+Worktree
+Benefits of worktree:
+
+- You can have multiple branches checked out at the same time.
+- Don't have to stash changes or commit to switch branches.
+
+How to:
+
+- `git clone --bare`
+- add worktree with lg
 
 ### Obsidian Integration
 
