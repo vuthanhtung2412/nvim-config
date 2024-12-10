@@ -10,7 +10,9 @@
     - [Open telescope select in a split](#open-telescope-select-in-a-split)
     - [Hurl](#hurl)
     - [How to navigate with Harpoon](#how-to-navigate-with-harpoon)
-    - [LazyGit](#lazygit)
+    - [Git](#git)
+      - [Keymaps](#keymaps)
+      - [LazyGit](#lazygit)
     - [Obsidian Integration](#obsidian-integration)
     - [Obsidian](#obsidian)
 <!--toc:end-->
@@ -83,13 +85,19 @@ In a markdown file, you can use leader + ca to generate table of content
 - **Harpoon:** Bookmark manager for buffers/files. Quickly switch to frequently
   used files in the current window.
 
-### LazyGit
+### Git
 
-a : to stage lazy git all at once
-visually select + space : partial stage
+#### Keymaps
+
 Leader + ghd : to view git diff with most recent commit
 Leader + gB : to go to ref on remote
 Leader + gY : to copy remote ref to clipboard
+
+#### LazyGit
+
+a : to stage lazy git all at once
+visually select + space : partial stage
+cursor to branch + o : open a PR
 
 Cherry pick workflow
 
