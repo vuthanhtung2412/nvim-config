@@ -63,8 +63,6 @@ In a markdown file, you can use leader + ca to generate table of content
 
 - Ctrl + h/j/k/l : to switch between tmux window
 
-### I3
-
 ### Open telescope select in a split
 
 - C-x : horizontal split
@@ -125,11 +123,37 @@ How to (while waiting for this issue to be resloved <https://github.com/kdheepak
 - when you compare branches, open a split view with tmux
   (or nv -d <branch+file path 1> <branch+file path 2>)
 
-### Obsidian Integration
-
 ### Obsidian
 
-- Excalidraw
-- Dataview
-- Zetllrkasen
-- Git
+Don't integrate notes into repo, If notes needs ref to repo just use a github link
+Each note would then correspond to one repo
+
+What I like about obsidian:
+
+- publish web
+- multiple platform
+- graph view
+- bunch of UI plugins
+
+What obsidian.nvim bring to the table:
+
+- leap.nvim (can somewhat be patched with ctrl f)
+- telescope (can be patched with ctrl shift f)
+- vim motions (can be patched with vimrc)
+- `gf` to jump between files and use jump list (can also be patched with vimrc)
+
+#### Things to do
+
+- [ ] vimrc
+- [ ] relative line
+- [ ] Excalidraw
+- [ ] Dataview
+- [ ] Git
+- [ ] Advanced table
+- [ ] project
+- [ ] set up zettelkasten
+
+Optional:
+- [ ] publish blogs
+- [ ] fast sync for cross device note
+- [ ] AI Search
