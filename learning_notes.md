@@ -52,6 +52,9 @@ v : to quit and enter visual mode
 leader + wm : to maximize (temporally full screen a window)
 :TSInstallInfo : to list all supported language by TreeSitter
 In a markdown file, you can use leader + ca to generate table of content
+yi + observe which key suggestions : for advanced yanking
+ci + observe which key suggestions : for advanced changing
+di + observe which key suggestions : for advanced deleting
 
 ## What to learn
 
@@ -154,6 +157,7 @@ What obsidian.nvim bring to the table:
 - [ ] set up zettelkasten
 
 Optional:
+
 - [ ] publish blogs
 - [ ] fast sync for cross device note
 - [ ] AI Search
