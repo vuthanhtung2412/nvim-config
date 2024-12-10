@@ -55,6 +55,8 @@ In a markdown file, you can use leader + ca to generate table of content
 yi + observe which key suggestions : for advanced yanking
 ci + observe which key suggestions : for advanced changing
 di + observe which key suggestions : for advanced deleting
+leader + qq : quit all
+leader + qS : Switch to another session
 
 ## What to learn
 
@@ -137,6 +139,9 @@ What I like about obsidian:
 - multiple platform
 - graph view
 - bunch of UI plugins
+- edit table
+- math expression
+- Kanban
 
 What obsidian.nvim bring to the table:
 
@@ -144,6 +149,38 @@ What obsidian.nvim bring to the table:
 - telescope (can be patched with ctrl shift f)
 - vim motions (can be patched with vimrc)
 - `gf` to jump between files and use jump list (can also be patched with vimrc)
+- smooth experience (I suck at vim).
+https://search.brave.com/search?q=clu&source=desktop
+What I want to have in a obsidian.vimrc:
+
+- g: Select the whole file.
+  - vig selects the whole file in visual mode.
+  - yig yanks the whole file.
+  - dig deletes the whole file.
+  - Similarly, cig, vag, yag, etc., act on the entire file.
+- i: Select the current indent block (lines with the same indentation level).
+  - vii selects the indent block in visual mode.
+  - yii yanks the indent block.
+  - dii deletes the indent block.
+- p: Select the inner paragraph (content without surrounding blank lines).
+  - vip selects the inner paragraph.
+  - yip yanks it.
+  - dip deletes it.
+- q: Select inside quotes (", ', ```, etc.).
+  - viq selects inside quotes.
+  - yiq yanks the quoted content.
+  - diq deletes inside quotes.
+- s: Select the current sentence.
+  - vis selects the sentence.
+  - yis yanks the sentence.
+  - dis deletes it.
+- jj to escape
+- send to clipboard
+- In normal mode
+  - Actions c/d/r shouldn't send to register
+- In normal mode
+  - Only y/x send to register
+- Map h/j/k/l to arrow key 
 
 #### Things to do
 

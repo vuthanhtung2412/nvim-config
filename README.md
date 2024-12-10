@@ -11,3 +11,9 @@ rm -rf ~/.local/state/nvim
 rm -rf ~/.cache/nvim
 nvim
 ```
+
+## Extras worth noting
+
++ octo : for git PR review
++ vimtex : editing latex with vim
++ mini.surround
