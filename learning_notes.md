@@ -35,7 +35,6 @@ leader + ca : to trigger code action
 leader + uC : change color scheme
 \[ / \] + b : to go left/right opened tab
 Shift + h/l has the same effect and i like it better
-
 leader + fb : fzf file in buffer
 leader + sh : open command help
 leader + sk : search key maps
@@ -43,9 +42,6 @@ leader + sr : search and replace
 leader + fT : open a quick terminal
 gc : to comment multiple line
 gc + o/O : add comment below above
-
-<!--this is a comment-->
-
 leader gB : git browse to remote repo
 gc : comment multiple line
 leader + p : open yank history
@@ -92,6 +88,8 @@ In a markdown file, you can use leader + ca to generate table of content
 a : to stage lazy git all at once
 visually select + space : partial stage
 Leader + ghd : to view git diff with most recent commit
+Leader + gB : to go to ref on remote
+Leader + gY : to copy remote ref to clipboard
 
 Cherry pick workflow
 
@@ -118,8 +116,6 @@ How to (while waiting for this issue to be resloved <https://github.com/kdheepak
 - create different git worktree on that folder
 - when you compare branches, open a split view with tmux
   (or nv -d <branch+file path 1> <branch+file path 2>)
-
-### Going to git remote ref
 
 ### Obsidian Integration
 
