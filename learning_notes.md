@@ -58,8 +58,9 @@ di + observe which key suggestions : for advanced deleting
 leader + qq : quit all
 leader + qS : Switch to another session
 R : to enter replace mode
-t + "char" : move the cursor to right before the "char"
-f + "char" : move the cursor to be on top of the "char"
+T/t + "char" : move the cursor to right before the prev/next "char"
+F/f + "char" : move the cursor to be on top of the prev/next "char"
+X/x : delete backward/forward
 
 ## What to learn
 
@@ -192,8 +193,10 @@ Optional
 
 #### Things to do
 
-- [ ] vimrc
-- [ ] relative line
+- [x] vimrc
+- [-] relative line
+  - Go by relative line is not quite snap because I prefer j/k go by visual lines instead of logical
+  - However I use zettelkasten system so each note should not exceed 100 lines.
 - [ ] Excalidraw
 - [ ] Dataview
 - [ ] Git
