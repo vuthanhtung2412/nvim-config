@@ -196,9 +196,11 @@ Optional
 
 - [x] vimrc
 - [x] relative line
-  - Go by relative line is not quite snap because I prefer j/k go by visual lines instead of logical
-  - However I use zettelkasten system so each note should not exceed 100 lines.
-  - Eventually, I decide to let the default and navigate by visual line with g + h/j/k/l
+  - Go by relative visual line with j/k and relative line with J/K
+  - H/J/K/L : all have unfrequent use
+    - H/L : go to top and bottom of the page
+    - J : merge the line below
+    - K : open help window
 - [ ] Excalidraw
 - [ ] Dataview
 - [ ] Git
