@@ -61,6 +61,7 @@ R : to enter replace mode
 T/t + "char" : move the cursor to right before the prev/next "char"
 F/f + "char" : move the cursor to be on top of the prev/next "char"
 X/x : delete backward/forward
+g + h/j/k/l : to move by visual line instead of logical line
 
 ## What to learn
 
@@ -194,9 +195,10 @@ Optional
 #### Things to do
 
 - [x] vimrc
-- [-] relative line
+- [x] relative line
   - Go by relative line is not quite snap because I prefer j/k go by visual lines instead of logical
   - However I use zettelkasten system so each note should not exceed 100 lines.
+  - Eventually, I decide to let the default and navigate by visual line with g + h/j/k/l
 - [ ] Excalidraw
 - [ ] Dataview
 - [ ] Git
