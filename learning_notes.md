@@ -57,6 +57,9 @@ ci + observe which key suggestions : for advanced changing
 di + observe which key suggestions : for advanced deleting
 leader + qq : quit all
 leader + qS : Switch to another session
+R : to enter replace mode
+t + "char" : move the cursor to right before the "char"
+f + "char" : move the cursor to be on top of the "char"
 
 ## What to learn
 
@@ -87,6 +90,8 @@ leader + qS : Switch to another session
 - **Jump List:** Tracks cursor movements to significant locations in a window.
 - **Harpoon:** Bookmark manager for buffers/files. Quickly switch to frequently
   used files in the current window.
+
+### How to replace with grub-far
 
 ### Git
 
@@ -133,15 +138,12 @@ How to (while waiting for this issue to be resloved <https://github.com/kdheepak
 Don't integrate notes into repo, If notes needs ref to repo just use a github link
 Each note would then correspond to one repo
 
-What I like about obsidian:
+Advantage of using obsidian solely:
 
-- publish web
-- multiple platform
-- graph view
-- bunch of UI plugins
-- edit table
-- math expression
-- Kanban
+- Avoid switching app
+- Better integration with plugins (Kaban, Table, Dataview, Math expression)
+- Graph view
+- Image view
 
 What obsidian.nvim bring to the table:
 
@@ -150,7 +152,8 @@ What obsidian.nvim bring to the table:
 - vim motions (can be patched with vimrc)
 - `gf` to jump between files and use jump list (can also be patched with vimrc)
 - smooth experience (I suck at vim).
-https://search.brave.com/search?q=clu&source=desktop
+<https://search.brave.com/search?q=clu&source=desktop>
+
 What I want to have in a obsidian.vimrc:
 
 - g: Select the whole file.
@@ -166,10 +169,6 @@ What I want to have in a obsidian.vimrc:
   - vip selects the inner paragraph.
   - yip yanks it.
   - dip deletes it.
-- q: Select inside quotes (", ', ```, etc.).
-  - viq selects inside quotes.
-  - yiq yanks the quoted content.
-  - diq deletes inside quotes.
 - s: Select the current sentence.
   - vis selects the sentence.
   - yis yanks the sentence.
@@ -178,9 +177,18 @@ What I want to have in a obsidian.vimrc:
 - send to clipboard
 - In normal mode
   - Actions c/d/r shouldn't send to register
-- In normal mode
+- In visual mode
   - Only y/x send to register
-- Map h/j/k/l to arrow key 
+- capital Y/C/D perform corresponding action till the end of the line
+- Map h/j/k/l to arrow key
+- using H and L for beginning/end of line
+
+Optional
+
+- q: Select inside quotes (", ', ```, etc.).
+  - viq selects inside quotes.
+  - yiq yanks the quoted content.
+  - diq deletes inside quotes.
 
 #### Things to do
 
