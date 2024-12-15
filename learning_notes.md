@@ -63,6 +63,13 @@ F/f + "char" : move the cursor to be on top of the prev/next "char"
 X/x : delete backward/forward
 g + h/j/k/l : to move by visual line instead of logical line
 
+## Useful gesture for a standard text editor
+
+double click : select word
+triple click : select the whole line
+ctrl + arrows : navigate by word
+shift + navigate : highlight when navigate
+
 ## What to learn
 
 ### DB
@@ -93,7 +100,18 @@ g + h/j/k/l : to move by visual line instead of logical line
 - **Harpoon:** Bookmark manager for buffers/files. Quickly switch to frequently
   used files in the current window.
 
-### How to replace with grub-far
+### How to replace with grug-far
+
+`:s/old_text/new_text/g` : replace current line
+`:%s/old_text/new_text/g` : replace current file
+`:s/old_text/new_text/gc` : replace current file with confirmation
+you can also highlight block and type the command above to replace a block
+
+leader + sr : for advanced operation then :
+
+- \r : simply replace all
+- delete unnecessary replacement then \s : to sync all change with grug-far editor
+- \l : to sync only a particular line
 
 ### Git
 
@@ -201,15 +219,27 @@ Optional
     - H/L : go to top and bottom of the page
     - J : merge the line below
     - K : open help window
-- [ ] Excalidraw
-- [ ] Dataview
-- [ ] Git
-- [ ] Advanced table
-- [ ] project
-- [ ] set up zettelkasten
+- [x] Excalidraw
+- [x] Dataview
+- [-] Git
+  - It is not working with nix installed obsidian and very unstable in mobile [link](https://github.com/Vinzent03/obsidian-git?tab=readme-ov-file#obsidian-on-linux)
+  - Instead just write a script that push vault daily
+- [x] Advanced table
+- [x] set up zettelkasten
 
 Optional:
 
-- [ ] publish blogs
+- [-] AI tag assistant
+  - [x] Smart connection
+    - [x] browser native version buggy af
+    - [x] I only need tags to be pre-embedded, but only pre-embedded note can recommend connection
+    - [x] data is save at .smart-env
+    - [ ] workaround self host ollama version
+- [-] Chat with notes
+
 - [ ] fast sync for cross device note
-- [ ] AI Search
+  - Sync with [self host liveSync](https://github.com/vrtmrz/obsidian-livesync)
+- [ ] publish blogs
+  - separte private & public in vault
+- [x] project
+  - Github/Gitlab issue is more than enough
