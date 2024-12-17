@@ -12,3 +12,7 @@ vim.keymap.set("n", "gx", function()
   local dir = vim.fn.expand("%:p:h")
   vim.cmd("silent !cd " .. dir .. " && open " .. file_path)
 end, { silent = true })
+-- terminal setup
+vim.api.nvim_command("autocmd TermOpen * startinsert")
+vim.api.nvim_command("autocmd TermOpen * setlocal number")
+vim.api.nvim_command("autocmd TermEnter * setlocal relativenumber")
