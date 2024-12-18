@@ -22,3 +22,4 @@ nvim
 + octo : for git PR review
 + vimtex : editing latex with vim
 + mini.surround
++ mini.files or oil
