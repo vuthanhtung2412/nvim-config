@@ -1,9 +1,14 @@
 # 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+To get started
 
-In case lazy vim behave weirdly run the following code
+``` bash
+git clone https://github.com/vuthanhtung2412/nvim-config.git ~/.config/nvim
+cd ~/.config/nvim
+rm -rf .git
+```
+
+In case lazy vim behave weirdly run the following code, to reset
 
 ```bash
 rm -rf ~/.local/share/nvim
