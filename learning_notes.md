@@ -246,3 +246,16 @@ Optional:
   - separte private & public in vault
 - [x] project
   - Github/Gitlab issue is more than enough
+
+## Lazy set up sequence
+
+options.lua -> lazy.lua
+`autocmds.lua` and `keymaps.lua` only apply on **very lazy** event
+
+## Lazy `config` vs `opts`
+
+In LazyVim:
+
+- `opts`: Specifies the configuration options for a plugin. LazyVim automatically passes these options to the plugin's setup function.
+- `config`: A function that runs after the plugin is loaded. It allows you to perform custom setup tasks, including calling the plugin's setup function or adding additional configuration, like key mappings or autocommands.
+- example : <https://www.lazyvim.org/extras/ai/copilot-chat#copilotchatnvim>
