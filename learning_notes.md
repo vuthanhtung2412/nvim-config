@@ -66,8 +66,9 @@
 - ctrl + arrows : resize pane
 - `K` : to open docs (then `K` again to hover docs)
 - gsa + nav_motion: to add surrounding (if surround not a single character press `?` to type custom character)
+  - for block surround operation **create surround first then select -> Alt -> Shift** is better.
 - vi? : select inner of custom block (for example that surrounded by `<text></text>`)
-- for block surround operation create surround first then select -> Alt -> Shift is better.
+  - Normally you can do `vii` since they normally have the same indentation
 
 ## Useful gesture for a standard text editor
 
