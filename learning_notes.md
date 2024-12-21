@@ -4,7 +4,6 @@
 - [Learning notes](#learning-notes)
   - [Useful Lazyvim command that I learnt](#useful-lazyvim-command-that-i-learnt)
   - [Useful gesture for a standard text editor](#useful-gesture-for-a-standard-text-editor)
-  - [What to learn](#what-to-learn)
     - [DB](#db)
     - [Tmux window switch](#tmux-window-switch)
     - [Open telescope select in a split](#open-telescope-select-in-a-split)
@@ -16,6 +15,8 @@
       - [LazyGit](#lazygit)
     - [Obsidian](#obsidian)
       - [Things to do](#things-to-do)
+  - [Lazy set up sequence](#lazy-set-up-sequence)
+  - [Lazy `config` vs `opts`](#lazy-config-vs-opts)
 <!--toc:end-->
 
 ## Useful Lazyvim command that I learnt
