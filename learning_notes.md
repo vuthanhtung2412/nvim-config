@@ -65,7 +65,9 @@
 - double esc to go from terminal mode to normal mode
 - ctrl + arrows : resize pane
 - `K` : to open docs (then `K` again to hover docs)
-- select in visual mode + gsa : to add surrounding
+- gsa + nav_motion: to add surrounding (if surround not a single character press `?` to type custom character)
+- vi? : select inner of custom block (for example that surrounded by `<text></text>`)
+- for block surround operation create surround first then select -> Alt -> Shift is better.
 
 ## Useful gesture for a standard text editor
 
