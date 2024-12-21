@@ -32,7 +32,6 @@
 - ctrl-r + {register} : to paste in vim
 - s + {search-term} : use leap.nvim to jump to any location
 - :LazyExtras : to install more nvim plugins such as LSP
-- K : to view docs of a function
 - leader + xx : view diagnostics panel
 - leader + ca : to trigger code action
 - leader + uC : change color scheme
@@ -65,6 +64,8 @@
 - g + h/j/k/l : to move by visual line instead of logical line
 - double esc to go from terminal mode to normal mode
 - ctrl + arrows : resize pane
+- `K` : to open docs (then `K` again to hover docs)
+- select in visual mode + gsa : to add surrounding
 
 ## Useful gesture for a standard text editor
 
@@ -72,8 +73,6 @@
 - triple click : select the whole line
 - ctrl + arrows : navigate by word
 - shift + navigate : highlight when navigate
-
-## What to learn
 
 ### DB
 
