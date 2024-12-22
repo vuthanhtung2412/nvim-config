@@ -17,6 +17,8 @@ local prompts = {
   Concise = "Please rewrite the following text to make it more concise.",
 }
 
+-- local select = require("CopilotChat.select")
+
 return {
   { -- I just yoinked the link below
     -- https://github.com/jellydn/lazy-nvim-ide/blob/main/lua/plugins/extras/copilot-chat-v2.lua
@@ -36,32 +38,13 @@ return {
           insert = "<leader>ax",
         },
       },
+      -- selection = function(source) -- Still not working to review multiple files edit
+      --   return select.visual(source)
+      -- end,
     },
     config = function(_, opts)
       local chat = require("CopilotChat")
       chat.setup(opts)
-
-      local select = require("CopilotChat.select")
-      vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
-        chat.ask(args.args, { selection = select.visual })
-      end, { nargs = "*", range = true })
-
-      vim.api.nvim_create_user_command("CopilotChatInline", function(args)
-        chat.ask(args.args, {
-          selection = select.visual,
-          window = {
-            layout = "float",
-            relative = "cursor",
-            width = 1,
-            height = 0.4,
-            row = 1,
-          },
-        })
-      end, { nargs = "*", range = true })
-
-      vim.api.nvim_create_user_command("CopilotChatBuffer", function(args)
-        chat.ask(args.args, { selection = select.buffer })
-      end, { nargs = "*", range = true })
 
       vim.api.nvim_create_autocmd("BufEnter", {
         pattern = "copilot-*",

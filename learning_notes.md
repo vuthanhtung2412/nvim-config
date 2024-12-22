@@ -64,7 +64,6 @@
 - X/x : delete backward/forward
 - g + h/j/k/l : to move by visual line instead of logical line
 - double esc to go from terminal mode to normal mode
-- ctrl + arrows : resize pane
 - `K` : to open docs (then `K` again to hover docs)
 - gsa + nav_motion: to add surrounding (if surround not a single character press `?` to type custom character)
   - for block surround operation **create surround first then select -> Alt -> Shift** is better.
@@ -262,3 +261,7 @@ In LazyVim:
 - `opts`: Specifies the configuration options for a plugin. LazyVim automatically passes these options to the plugin's setup function.
 - `config`: A function that runs after the plugin is loaded. It allows you to perform custom setup tasks, including calling the plugin's setup function or adding additional configuration, like key mappings or autocommands.
 - example : <https://www.lazyvim.org/extras/ai/copilot-chat#copilotchatnvim>
+
+## Window split Lazyvim
+
+- New lazy vim use edgy.nvim which mean pane can't be resized
