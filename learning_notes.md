@@ -29,7 +29,8 @@
 - ctrl + h/j/k/l : to moved between split view
 - ctrl + arrows : to resize split view
 - leader + cm : open mason manager LSP
-- leader + sC : fzf search for available command
+- leader + sC : fzf search command history
+- ff + `select-file` + Ctrl + v : to open a file in vertical split
 - :q : to close a split tab
 - ctrl-r + {register} : to paste in vim
 - s + {search-term} : use leap.nvim to jump to any location
