@@ -17,7 +17,7 @@ local prompts = {
   Concise = "Please rewrite the following text to make it more concise.",
 }
 
--- local select = require("CopilotChat.select")
+local select = require("CopilotChat.select")
 
 return {
   { -- I just yoinked the link below
@@ -38,9 +38,9 @@ return {
           insert = "<leader>ax",
         },
       },
-      -- selection = function(source) -- Still not working to review multiple files edit
-      --   return select.visual(source)
-      -- end,
+      selection = function(source) -- Still not working to review multiple files edit
+        return select.visual(source)
+      end,
     },
     config = function(_, opts)
       local chat = require("CopilotChat")

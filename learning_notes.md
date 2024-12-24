@@ -17,6 +17,7 @@
       - [Things to do](#things-to-do)
   - [Lazy set up sequence](#lazy-set-up-sequence)
   - [Lazy `config` vs `opts`](#lazy-config-vs-opts)
+  - [Window split Lazyvim](#window-split-lazyvim)
 <!--toc:end-->
 
 ## Useful Lazyvim command that I learnt
@@ -58,6 +59,7 @@
 - di + observe which key suggestions : for advanced deleting
 - leader + qq : quit all
 - leader + qS : Switch to another session
+- Ctrl + r : redo
 - R : to enter replace mode
 - T/t + "char" : move the cursor to right before the prev/next "char"
 - F/f + "char" : move the cursor to be on top of the prev/next "char"
