@@ -11,12 +11,8 @@ vim.keymap.set({ "n", "v" }, "C", '"_C', { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "X", '"_X', { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "r", '"_r', { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, "s", '<nop>', { noremap = true, silent = true })
 -- flash keymaps
 vim.keymap.set({ "n", "x", "o" }, "f", function()
   require("flash").jump()
 end, { desc = "Flash" })
--- I don't use this and it mess up surround.nvim
--- vim.keymap.set({ "n", "x", "o" }, "F", function()
---   require("flash").treesitter()
--- end, { desc = "Flash Treesitter" })
+vim.keymap.set({ "n", "v" }, "F", '<nop>', { noremap = true, silent = true })

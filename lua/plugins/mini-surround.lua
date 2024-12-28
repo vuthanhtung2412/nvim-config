@@ -1,4 +1,3 @@
-
 return {
   {
     "echasnovski/mini.surround",
@@ -6,7 +5,8 @@ return {
       local opts = LazyVim.opts("mini.surround")
       local mappings = {
         -- TODO: make which-key display on pressing `s` key
-        -- { "s", desc = "surround", mode = { "n", "v" } },
+        { "s", "<nop>", desc = "surround", mode = { "n", "v" } },
+        { "S", "<nop>", mode = { "n", "v" } },
         { opts.mappings.add, desc = "Add surrounding", mode = { "n", "v" } },
         { opts.mappings.delete, desc = "Delete surrounding" },
         { opts.mappings.find, desc = "Find right surrounding" },
