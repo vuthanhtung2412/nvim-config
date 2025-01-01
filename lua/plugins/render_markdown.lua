@@ -6,5 +6,5 @@ return {
       icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
     },
   },
-  ft = { "copilot-chat", "markdown", "norg", "rmd", "org", "vimwiki" },
+  ft = { "markdown", "norg", "rmd", "org", "vimwiki" },
 }
