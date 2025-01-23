@@ -7,11 +7,20 @@ vim.opt.winbar = "%=%m %f"
 vim.g.autoformat = false
 vim.g.snacks_animate = false
 -- https://www.reddit.com/r/vim/comments/7xs8x3/opening_local_relative_paths_with_gx/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-vim.keymap.set("n", "gx", function()
-  local file_path = vim.fn.expand("<cfile>")
-  local dir = vim.fn.expand("%:p:h")
-  vim.cmd("silent !cd " .. dir .. " && open " .. file_path)
-end, { silent = true })
+-- vim.keymap.set("n", "gx", function()
+--   local file_path = vim.fn.expand("<cfile>")
+--   local dir = vim.fn.expand("%:p:h")
+--   vim.cmd("silent !cd " .. dir .. " && open " .. file_path)
+-- end, { silent = true })
+
+-- https://www.reddit.com/r/neovim/comments/ro6oye/open_link_from_neovim/
+vim.keymap.set(
+  "n",
+  "gx",
+  [[:execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]],
+  { noremap = true, silent = true }
+)
+
 -- terminal setup
 vim.api.nvim_command("autocmd TermOpen * startinsert")
 vim.api.nvim_command("autocmd TermOpen * setlocal number")
