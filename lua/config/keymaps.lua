@@ -23,3 +23,16 @@ vim.keymap.set({ "n", "x", "o" }, "f", function()
   require("flash").jump()
 end, { desc = "Flash" })
 vim.keymap.set({ "n", "v" }, "F", "<nop>", { noremap = true, silent = true })
+-- Yank file name
+vim.keymap.set(
+  "n",
+  "<leader>fp",
+  ':let @+ = expand("%")<CR>',
+  { desc = "yank file relative file", noremap = true, silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>fP",
+  ':let @+ = expand("%:p")<CR>',
+  { desc = "yank absolute file path", noremap = true, silent = true }
+)
