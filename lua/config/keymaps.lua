@@ -38,6 +38,7 @@ vim.keymap.set(
 )
 
 -- search by directory then grep
+-- https://www.reddit.com/r/neovim/comments/1ifcksk/comment/majansf/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 vim.keymap.set("n", "<leader>fdg", function()
   -- Get a list of all directories in the workspace
   local workspace_path = vim.fn.getcwd()
