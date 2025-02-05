@@ -36,3 +36,24 @@ vim.keymap.set(
   ':let @+ = expand("%:p")<CR>',
   { desc = "yank absolute file path", noremap = true, silent = true }
 )
+
+-- search by directory then grep
+vim.keymap.set("n", "<leader>fdg", function()
+  -- Get a list of all directories in the workspace
+  local workspace_path = vim.fn.getcwd()
+  local directories = vim.fn.systemlist("find " .. workspace_path .. " -type d")
+
+  -- Present the directories to the user for selection
+  vim.ui.select(directories, {
+    prompt = "Select a directory:",
+    format_item = function(item)
+      return item
+    end,
+  }, function(choice)
+    if choice then
+      require('snacks').picker.grep({ dirs = { choice } })
+    else
+      print("No directory selected")
+    end
+  end)
+end, { desc = "Grep directory" })
