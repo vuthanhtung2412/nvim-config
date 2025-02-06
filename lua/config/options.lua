@@ -13,15 +13,20 @@ vim.g.snacks_animate = false
 --   vim.cmd("silent !cd " .. dir .. " && open " .. file_path)
 -- end, { silent = true })
 
--- https://www.reddit.com/r/neovim/comments/ro6oye/open_link_from_neovim/
-vim.keymap.set(
-  "n",
-  "gx",
-  [[:execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]],
-  { noremap = true, silent = true }
-)
-
 -- terminal setup
 vim.api.nvim_command("autocmd TermOpen * startinsert")
 vim.api.nvim_command("autocmd TermOpen * setlocal number")
 vim.api.nvim_command("autocmd TermEnter * setlocal relativenumber")
+
+vim.o.clipboard = "unnamedplus"
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}

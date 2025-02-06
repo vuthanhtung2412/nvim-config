@@ -37,6 +37,14 @@ vim.keymap.set(
   { desc = "yank absolute file path", noremap = true, silent = true }
 )
 
+-- https://www.reddit.com/r/neovim/comments/ro6oye/open_link_from_neovim/
+vim.keymap.set(
+  "n",
+  "gx",
+  [[:execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]],
+  { noremap = true, silent = true }
+)
+
 -- search by directory then grep
 -- https://www.reddit.com/r/neovim/comments/1ifcksk/comment/majansf/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 vim.keymap.set("n", "<leader>fdg", function()
