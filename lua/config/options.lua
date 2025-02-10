@@ -18,18 +18,27 @@ vim.api.nvim_command("autocmd TermOpen * startinsert")
 vim.api.nvim_command("autocmd TermOpen * setlocal number")
 vim.api.nvim_command("autocmd TermEnter * setlocal relativenumber")
 
-vim.o.clipboard = "unnamedplus"
--- source : https://github.com/ojroques/nvim-osc52?tab=readme-ov-file#using-nvim-osc52-as-clipboard-provider
-local function copy(lines, _)
-  require('osc52').copy(table.concat(lines, '\n'))
-end
+vim.opt.clipboard = 'unnamedplus'  -- Use system clipboard
 
-local function paste()
-  return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
+if vim.env.SSH_CLIENT then
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+      ['+'] = {
+        'sh', '-c',
+        "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
+        '--',
+      },
+      ['*'] = {
+        'sh', '-c',
+        "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
+        '--',
+      },
+    },
+    paste = {
+      ['+'] = nil,
+      ['*'] = nil,
+    },
+    cache_enabled = false,
+  }
 end
-
-vim.g.clipboard = {
-  name = 'osc52',
-  copy = {['+'] = copy, ['*'] = copy},
-  paste = {['+'] = paste, ['*'] = paste},
-}
