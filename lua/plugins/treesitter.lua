@@ -1,4 +1,4 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = { ensure_installed = { "hurl" } },
+  opts = { ensure_installed = { "terraform", "hcl" } },
 }

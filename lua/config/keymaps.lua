@@ -13,8 +13,8 @@ vim.keymap.set({ "n" }, "X", '"_X', { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "r", '"_r', { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "yY", "_y$", { noremap = true, silent = true })
 -- inspration : https://stackoverflow.com/a/77247473/14281306
-vim.api.nvim_set_keymap('x', 'il', 'g_o^', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('o', 'il', ':<C-u>normal vil<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "il", "g_o^", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("o", "il", ":<C-u>normal vil<CR>", { noremap = true, silent = true })
 -- inspration : https://stackoverflow.com/a/16136133
 vim.keymap.set({ "n" }, "oo", "o<ESC>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "OO", "O<ESC>", { noremap = true, silent = true })
@@ -36,6 +36,19 @@ vim.keymap.set(
   ':let @+ = expand("%:p")<CR>',
   { desc = "yank absolute file path", noremap = true, silent = true }
 )
+
+-- Keymap only for Terraform files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "terraform", -- Only apply to terraform files
+  callback = function()
+    vim.keymap.set(
+      "n",
+      "gx",
+      ":OpenDoc<CR>",
+      { noremap = true, silent = true, buffer = true, desc = "Open Terraform Doc" }
+    )
+  end,
+})
 
 -- https://www.reddit.com/r/neovim/comments/ro6oye/open_link_from_neovim/
 vim.keymap.set(
@@ -60,7 +73,7 @@ vim.keymap.set("n", "<leader>fdg", function()
     end,
   }, function(choice)
     if choice then
-      require('snacks').picker.grep({ dirs = { choice } })
+      require("snacks").picker.grep({ dirs = { choice } })
     else
       print("No directory selected")
     end
