@@ -22,18 +22,21 @@ vim.api.nvim_command("autocmd TermEnter * setlocal relativenumber")
 -- run `checkhealth` -> search for clipboard to see the provider
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 
+-- for now still need ctrl + V to paste
 if vim.env.SSH_CLIENT then
+  local function paste()
+    return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+  end
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {
       ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
       ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
     },
-    -- TODO: for now just paste by control V
-    -- paste = {
-    --   ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-    --   ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-    -- },
+    paste = {
+      ["+"] = paste,
+      ["*"] = paste,
+    },
   }
 end
 
