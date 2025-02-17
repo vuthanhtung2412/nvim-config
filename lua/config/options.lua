@@ -36,6 +36,7 @@ if vim.env.SSH_CLIENT then
   }
 end
 
+-- -- source : local osc52 = require("vim.ui.clipboard.osc52")
 -- -- clipboard overrides is needed as Alacritty does not support runtime OSC 52 detection.
 -- -- We need to customize the clipboard depending on whether in tmux, in SSH_TTY or not.
 -- --  In Tmux, there are 2 clipboard providers
@@ -50,16 +51,18 @@ end
 -- --
 -- --  You can test OSC 52 in terminal by using following in your terminal -
 -- --  printf $'\e]52;c;%s\a' "$(base64 <<<'hello world')"
+-- --  kitty tmux doesn't support osc52
 -- local is_tmux_session = vim.env.TERM_PROGRAM == "tmux" -- Tmux is its own clipboard provider which directly works.
+-- vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 -- -- TMUX documentation about its clipboard - https://github.com/tmux/tmux/wiki/Clipboard#the-clipboard
 -- if vim.env.SSH_TTY and not is_tmux_session then
---    local function paste()
---      return { vim.fn.split(vim.fn.getreg(""), "\n"),       vim.fn.getregtype("") }
---    end
---    local osc52 = require("vim.ui.clipboard.osc52")
---    vim.g.clipboard = {
---      name = "OSC 52",
---      copy = {
+--   local function paste()
+--     return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+--   end
+--   local osc52 = require("vim.ui.clipboard.osc52")
+--   vim.g.clipboard = {
+--     name = "OSC 52",
+--     copy = {
 --       ["+"] = osc52.copy("+"),
 --       ["*"] = osc52.copy("*"),
 --     },
@@ -67,5 +70,5 @@ end
 --       ["+"] = paste,
 --       ["*"] = paste,
 --     },
---    }
---  end
+--   }
+-- end
