@@ -18,61 +18,52 @@ vim.api.nvim_command("autocmd TermOpen * startinsert")
 vim.api.nvim_command("autocmd TermOpen * setlocal number")
 vim.api.nvim_command("autocmd TermEnter * setlocal relativenumber")
 
--- vim.opt.clipboard = 'unnamedplus'  -- Use system clipboard
---
--- if vim.env.SSH_CLIENT then
---   vim.g.clipboard = {
---     name = 'OSC 52',
---     copy = {
---       ['+'] = {
---         'sh', '-c',
---         "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
---         '--',
---       },
---       ['*'] = {
---         'sh', '-c',
---         "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
---         '--',
---       },
---     },
---     paste = {
---       ['+'] = nil,
---       ['*'] = nil,
---     },
---     cache_enabled = false,
---   }
--- end
+vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 
--- clipboard overrides is needed as Alacritty does not support runtime OSC 52 detection.
--- We need to customize the clipboard depending on whether in tmux, in SSH_TTY or not.
---  In Tmux, there are 2 clipboard providers
---  1. Tmux
---  2. OSC52 should also work by default.
---  In SSH_TTY, OSC 52 should work, but needs to be overridden as I use Alacritty.
---  In local (not SSH session), LazyVim default clipboard providers can be used.
---   Sample references -
---   https://github.com/folke/which-key.nvim/issues/584 - Has references to when clipboard is modified
---   Some more info here - https://www.reddit.com/r/neovim/comments/17rbbec/neovim_nightly_now_you_can_copy_via_ssh_with/
---
---
---  You can test OSC 52 in terminal by using following in your terminal -
---  printf $'\e]52;c;%s\a' "$(base64 <<<'hello world')"
-local is_tmux_session = vim.env.TERM_PROGRAM == "tmux" -- Tmux is its own clipboard provider which directly works.
--- TMUX documentation about its clipboard - https://github.com/tmux/tmux/wiki/Clipboard#the-clipboard
-if vim.env.SSH_TTY and not is_tmux_session then
-   local function paste()
-     return { vim.fn.split(vim.fn.getreg(""), "\n"),       vim.fn.getregtype("") }
-   end
-   local osc52 = require("vim.ui.clipboard.osc52")
-   vim.g.clipboard = {
-     name = "OSC 52",
-     copy = {
-      ["+"] = osc52.copy("+"),
-      ["*"] = osc52.copy("*"),
+if vim.env.SSH_CLIENT then
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
     },
     paste = {
-      ["+"] = paste,
-      ["*"] = paste,
+      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
     },
-   }
- end
+  }
+end
+
+-- -- clipboard overrides is needed as Alacritty does not support runtime OSC 52 detection.
+-- -- We need to customize the clipboard depending on whether in tmux, in SSH_TTY or not.
+-- --  In Tmux, there are 2 clipboard providers
+-- --  1. Tmux
+-- --  2. OSC52 should also work by default.
+-- --  In SSH_TTY, OSC 52 should work, but needs to be overridden as I use Alacritty.
+-- --  In local (not SSH session), LazyVim default clipboard providers can be used.
+-- --   Sample references -
+-- --   https://github.com/folke/which-key.nvim/issues/584 - Has references to when clipboard is modified
+-- --   Some more info here - https://www.reddit.com/r/neovim/comments/17rbbec/neovim_nightly_now_you_can_copy_via_ssh_with/
+-- --
+-- --
+-- --  You can test OSC 52 in terminal by using following in your terminal -
+-- --  printf $'\e]52;c;%s\a' "$(base64 <<<'hello world')"
+-- local is_tmux_session = vim.env.TERM_PROGRAM == "tmux" -- Tmux is its own clipboard provider which directly works.
+-- -- TMUX documentation about its clipboard - https://github.com/tmux/tmux/wiki/Clipboard#the-clipboard
+-- if vim.env.SSH_TTY and not is_tmux_session then
+--    local function paste()
+--      return { vim.fn.split(vim.fn.getreg(""), "\n"),       vim.fn.getregtype("") }
+--    end
+--    local osc52 = require("vim.ui.clipboard.osc52")
+--    vim.g.clipboard = {
+--      name = "OSC 52",
+--      copy = {
+--       ["+"] = osc52.copy("+"),
+--       ["*"] = osc52.copy("*"),
+--     },
+--     paste = {
+--       ["+"] = paste,
+--       ["*"] = paste,
+--     },
+--    }
+--  end
