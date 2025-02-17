@@ -19,6 +19,7 @@ vim.api.nvim_command("autocmd TermOpen * setlocal number")
 vim.api.nvim_command("autocmd TermEnter * setlocal relativenumber")
 
 -- run `:lua print(vim.fn.has('clipboard_osc52'))` to test if osc52 is natively supported
+-- run `checkhealth` -> search for clipboard to see the provider
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 
 if vim.env.SSH_CLIENT then
