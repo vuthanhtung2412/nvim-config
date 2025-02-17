@@ -18,27 +18,27 @@ vim.api.nvim_command("autocmd TermOpen * startinsert")
 vim.api.nvim_command("autocmd TermOpen * setlocal number")
 vim.api.nvim_command("autocmd TermEnter * setlocal relativenumber")
 
-vim.opt.clipboard = 'unnamedplus'  -- Use system clipboard
-
-if vim.env.SSH_CLIENT then
-  vim.g.clipboard = {
-    name = 'OSC 52',
-    copy = {
-      ['+'] = {
-        'sh', '-c',
-        "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
-        '--',
-      },
-      ['*'] = {
-        'sh', '-c',
-        "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
-        '--',
-      },
-    },
-    paste = {
-      ['+'] = nil,
-      ['*'] = nil,
-    },
-    cache_enabled = false,
-  }
-end
+-- vim.opt.clipboard = 'unnamedplus'  -- Use system clipboard
+--
+-- if vim.env.SSH_CLIENT then
+--   vim.g.clipboard = {
+--     name = 'OSC 52',
+--     copy = {
+--       ['+'] = {
+--         'sh', '-c',
+--         "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
+--         '--',
+--       },
+--       ['*'] = {
+--         'sh', '-c',
+--         "printf '\\033]52;c;%s\\007' \"$(printf '%s' $1 | base64)\"",
+--         '--',
+--       },
+--     },
+--     paste = {
+--       ['+'] = nil,
+--       ['*'] = nil,
+--     },
+--     cache_enabled = false,
+--   }
+-- end
