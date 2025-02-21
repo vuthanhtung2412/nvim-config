@@ -3,6 +3,7 @@
 return {
   "pocco81/auto-save.nvim",
   event = { "InsertLeave", "TextChanged" },
+  -- enabled = false,
   opts = {
     condition = function(buf)
       local fn = vim.fn
