@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 -- vim.keymap.set("i", "jj", "<Esc>:w<CR>", { silent = true })
-vim.keymap.set("t", "<C-j>", "<C-\\><C-n>", { silent = true })
+vim.keymap.set("t", ";;", "<C-\\><C-n>", { silent = true })
 -- Prevent change and delete motion from sending to the clipboard in normal mode
 vim.keymap.set({ "n", "v" }, "c", '"_c', { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true, silent = true })
