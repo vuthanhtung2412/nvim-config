@@ -74,6 +74,8 @@
 - vi? : select inner of custom block (for example that surrounded by `<text></text>`)
   - Normally you can do `vii` since they normally have the same indentation
 - _ : to go the beginning of the line ignore leading white space
+- leader + cn : generate annotation with neogen
+- leader + uh : toggle ghost text (inlay)
 
 ## Useful gesture for a standard text editor
 
