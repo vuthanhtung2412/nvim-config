@@ -21,7 +21,7 @@ return {
     show_notification = false,
     -- Show response in popup or split
     -- Auto split display when code is error
-    mode = 'popup',
+    mode = "popup",
     -- Default formatter
     formatters = {
       json = { "jq" }, -- Make sure you have install jq in your system, e.g: brew install jq
@@ -45,13 +45,11 @@ return {
     },
   },
   keys = {
-    { "<leader>r", desc = "+hurl", mode = { "n", "v" } },
+    { "<leader>r", desc = "+hurl", mode = { "n" } },
     -- Run API request
     { "<leader>rA", "<cmd>HurlRunner<CR>", desc = "Run All requests" },
     { "<leader>ra", "<cmd>HurlRunnerAt<CR>", desc = "Run Api request" },
     { "<leader>re", "<cmd>HurlRunnerToEntry<CR>", desc = "Run Api request to entry" },
     { "<leader>rE", "<cmd>HurlRunnerToEnd<CR>", desc = "Run Api request from current entry to end" },
-    -- Run Hurl request in visual mode
-    { "<leader>h", ":HurlRunner<CR>", desc = "Hurl Runner", mode = "v" },
   },
 }
