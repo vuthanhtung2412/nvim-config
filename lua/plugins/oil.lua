@@ -15,7 +15,7 @@ return {
       -- Since h and l is already taken for text navigation
       ["L"] = { "actions.select", mode = "n" },
       ["H"] = { "actions.parent", mode = "n" },
-    },
+   },
   },
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
