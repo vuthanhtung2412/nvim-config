@@ -2,6 +2,7 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- Inspiration : https://www.reddit.com/r/neovim/comments/10pkzpw/comment/j6l5u99
 vim.api.nvim_create_autocmd({
   "BufLeave",
   "FocusLost",
