@@ -8,6 +8,7 @@
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429" },
   "cmake-tools.nvim": { "branch": "master", "commit": "a5d5bf0a93bb96085502334a5036fc054ad9cf33" },
+  "codecompanion.nvim": { "branch": "main", "commit": "b943a4cf3bad83257d4308973eefe503892fb224" },
   "conform.nvim": { "branch": "master", "commit": "f8929b32acb8712381621b42ef3b0219c3c41efd" },
   "copilot.lua": { "branch": "master", "commit": "d1b6e6ced09fbe15b96741de5fa84e89479f3144" },
   "crates.nvim": { "branch": "main", "commit": "fd2bbca7aa588f24ffc3517831934b4c4a9588e9" },
