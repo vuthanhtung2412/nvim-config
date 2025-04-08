@@ -19,10 +19,6 @@ vim.api.nvim_set_keymap("o", "il", ":<C-u>normal vil<CR>", { noremap = true, sil
 -- inspration : https://stackoverflow.com/a/16136133
 vim.keymap.set({ "n" }, "oo", "o<ESC>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "OO", "O<ESC>", { noremap = true, silent = true })
--- flash keymaps
-vim.keymap.set({ "n", "x", "o" }, "f", function()
-  require("flash").jump()
-end, { desc = "Flash" })
 vim.keymap.set({ "n", "v" }, "F", "<nop>", { noremap = true, silent = true })
 -- Yank file name
 vim.keymap.set(

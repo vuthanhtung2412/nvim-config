@@ -3,8 +3,6 @@ return {
   opts = {
     triggers = {
       { "<auto>", mode = "nxso" },
-      -- this on for mini-surround.nvim
-      { "s", mode = { "n", "v" } },
     },
   },
 }
