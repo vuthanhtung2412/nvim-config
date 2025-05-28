@@ -1,9 +1,12 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
-  version = false, -- Never set this value to "*"! Never!
+  version = false,
   opts = {
     provider = "copilot",
+  },
+  keys = {
+    { "<leader>an", "<cmd>AvanteChatNew<CR>", desc = "New Avante chat session" },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
@@ -14,7 +17,7 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
-    "echasnovski/mini.pick", -- for file_selector provider mini.pick
+    "ibhagwan/fzf-lua", -- for file_selector provider fzf
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
@@ -22,8 +25,6 @@ return {
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",
       opts = {
-        file_selector = "mini.pick",
-        disabled_tools = { "python" },
         -- recommended settings
         default = {
           embed_image_as_base64 = false,
