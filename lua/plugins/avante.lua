@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   version = false,
   opts = {
+    mode = "legacy",
     provider = "copilot",
     system_prompt = function()
       local hub = require("mcphub").get_hub_instance()
@@ -14,19 +15,35 @@ return {
         require("mcphub.extensions.avante").mcp_tool(),
       }
     end,
-    -- disabled_tools = { "python", "bash" }, -- without mcp-hub
-    disabled_tools = {
-        "list_files",    -- Built-in file operations
-        "search_files",
-        "read_file",
-        "create_file",
-        "rename_file",
-        "delete_file",
-        "create_dir",
-        "rename_dir",
-        "delete_dir",
-        "bash",         -- Built-in terminal access
-    }, -- with mcp-hub
+    -- this is fckin buggy
+    disabled_tools = { "python", "bash", "replace_in_file" }, -- without mcp-hub
+    -- this is fckin buggy too
+    auto_approve_tool_permissions = {
+      "rag_search",
+      "git_diff",
+      "list_files",
+      "search_files",
+      "search_keyword",
+      "read_file_toplevel_symbols",
+      "read_file",
+      "create_file",
+      "create_dir",
+      "web_search",
+      "fetch",
+    },
+    -- disabled_tools = {
+    --     "list_files",    -- Built-in file operations
+    --     "search_files",
+    --     "read_file",
+    --     "create_file",
+    --     "rename_file",
+    --     "delete_file",
+    --     "create_dir",
+    --     "rename_dir",
+    --     "delete_dir",
+    --     "bash",         -- Built-in terminal access
+    --     "python"
+    -- }, -- with mcp-hub
     -- cursor_applying_provider = "groq", -- In this example, use Groq for applying, but you can also use any provider you want.
     -- behaviour = {
     --   --- ... existing behaviours
