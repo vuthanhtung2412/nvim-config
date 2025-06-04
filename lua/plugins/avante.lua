@@ -4,6 +4,7 @@ return {
   version = false,
   opts = {
     mode = "legacy",
+    -- claude 3.7 is the best
     provider = "copilot",
     system_prompt = function()
       local hub = require("mcphub").get_hub_instance()
@@ -15,9 +16,17 @@ return {
         require("mcphub.extensions.avante").mcp_tool(),
       }
     end,
-    -- this is fckin buggy
-    disabled_tools = { "python", "bash", "replace_in_file" }, -- without mcp-hub
-    -- this is fckin buggy too
+    -- all tools can be found here : https://github.com/yetone/avante.nvim/tree/main/lua/avante/llm_tools
+    disabled_tools = {
+      "run_python",
+      "bash",
+      -- these agentic features are too buggy
+      "replace_in_file",
+      "dispatch_agent",
+      "insert",
+      "write_to_file",
+      "delete_tool_use_messages",
+    }, -- without mcp-hub
     auto_approve_tool_permissions = {
       "rag_search",
       "git_diff",
