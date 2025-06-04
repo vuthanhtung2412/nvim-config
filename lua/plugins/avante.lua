@@ -4,6 +4,17 @@ return {
   version = false,
   opts = {
     provider = "copilot",
+    system_prompt = function()
+      local hub = require("mcphub").get_hub_instance()
+      return hub and hub:get_active_servers_prompt() or ""
+    end,
+    -- Using function prevents requiring mcphub before it's loaded
+    custom_tools = function()
+      return {
+        require("mcphub.extensions.avante").mcp_tool(),
+      }
+    end,
+    disabled_tools = { "python", "bash" },
     -- cursor_applying_provider = "groq", -- In this example, use Groq for applying, but you can also use any provider you want.
     -- behaviour = {
     --   --- ... existing behaviours
@@ -21,6 +32,7 @@ return {
     -- },
   },
   keys = {
+    { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
     { "<leader>an", "<cmd>AvanteChatNew<CR>", desc = "New Avante chat session" },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
