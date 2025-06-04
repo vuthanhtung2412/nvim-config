@@ -14,7 +14,19 @@ return {
         require("mcphub.extensions.avante").mcp_tool(),
       }
     end,
-    disabled_tools = { "python", "bash" },
+    -- disabled_tools = { "python", "bash" }, -- without mcp-hub
+    disabled_tools = {
+        "list_files",    -- Built-in file operations
+        "search_files",
+        "read_file",
+        "create_file",
+        "rename_file",
+        "delete_file",
+        "create_dir",
+        "rename_dir",
+        "delete_dir",
+        "bash",         -- Built-in terminal access
+    }, -- with mcp-hub
     -- cursor_applying_provider = "groq", -- In this example, use Groq for applying, but you can also use any provider you want.
     -- behaviour = {
     --   --- ... existing behaviours
