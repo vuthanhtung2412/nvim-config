@@ -34,6 +34,7 @@ return {
       "search_files",
       "search_keyword",
       "read_file_toplevel_symbols",
+      "view",
       "read_file",
       "create_file",
       "create_dir",
