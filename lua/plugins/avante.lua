@@ -41,32 +41,21 @@ return {
       "web_search",
       "fetch",
     },
-    -- disabled_tools = {
-    --     "list_files",    -- Built-in file operations
-    --     "search_files",
-    --     "read_file",
-    --     "create_file",
-    --     "rename_file",
-    --     "delete_file",
-    --     "create_dir",
-    --     "rename_dir",
-    --     "delete_dir",
-    --     "bash",         -- Built-in terminal access
-    --     "python"
-    -- }, -- with mcp-hub
-    -- cursor_applying_provider = "groq", -- In this example, use Groq for applying, but you can also use any provider you want.
-    -- behaviour = {
-    --   --- ... existing behaviours
-    --   enable_cursor_planning_mode = true, -- enable cursor planning mode!
-    -- },
-    -- vendors = {
-    --   --- ... existing vendors
-    --   groq = { -- define groq provider
+    behaviour = {
+      enable_cursor_planning_mode = true, -- enable cursor planning mode!
+    },
+    -- cursor_applying_provider = "groq",
+    -- providers = {
+    --   groq = {
     --     __inherited_from = "openai",
     --     api_key_name = "GROQ_API_KEY",
     --     endpoint = "https://api.groq.com/openai/v1/",
     --     model = "llama-3.3-70b-versatile",
-    --     max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+    --     disable_tools = true,
+    --     extra_request_body = {
+    --       temperature = 1,
+    --       max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+    --     },
     --   },
     -- },
   },
