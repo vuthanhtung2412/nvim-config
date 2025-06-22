@@ -2,6 +2,7 @@ return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   version = false,
+  enabled = false,
   opts = {
     mode = "legacy",
     -- claude 3.7 is the best
