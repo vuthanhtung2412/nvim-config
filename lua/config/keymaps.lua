@@ -97,3 +97,31 @@ vim.keymap.set("v", "<leader>@", function()
   -- Notify user
   print("Copied position: " .. pos_str)
 end, { desc = "Coord of selection", silent = true })
+
+-- Get current symbol code path
+vim.keymap.set("n", "<leader>sy", function()
+  if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+    local trouble = require("trouble")
+    local symbols = trouble.statusline({
+      mode = "symbols",
+      groups = {},
+      title = false,
+      filter = { range = true },
+      format = "{symbol.name}",
+    })
+    
+    if symbols.has() then
+      local raw_path = symbols.get()
+      -- Clean up highlight groups, stars, and format as dot-separated path
+      local clean_path = raw_path:gsub("%%#[^#]*#", ""):gsub("%%*", ""):gsub("%*", ""):gsub("%s+", "."):gsub("^%.+", ""):gsub("%.+$", "")
+      vim.fn.setreg("+", clean_path)
+      print("Copied: " .. clean_path)
+      return
+    end
+  end
+  
+  -- Fallback
+  local word = vim.fn.expand("<cword>")
+  vim.fn.setreg("+", word)
+  print("Copied: " .. word)
+end, { desc = "Yank symbol path" })
