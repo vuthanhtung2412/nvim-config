@@ -1,4 +1,4 @@
-# 💤 LazyVim
+# Vim Diesel 🏎️
 
 To get started
 
