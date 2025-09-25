@@ -127,4 +127,4 @@ vim.keymap.set("n", "<leader>sy", function()
 end, { desc = "Yank symbol path" })
 
 -- Disable "q" for macro and "q:" for command history since I rarely use it
-vim.keymap.set("n", "q", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "q", "<Nop>", { noremap = true, silent = true })
