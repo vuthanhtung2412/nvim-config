@@ -125,3 +125,6 @@ vim.keymap.set("n", "<leader>sy", function()
   vim.fn.setreg("+", word)
   print("Copied: " .. word)
 end, { desc = "Yank symbol path" })
+
+-- Disable "q" for macro and "q:" for command history since I rarely use it
+vim.keymap.set("n", "q", "<Nop>", { noremap = true, silent = true })
