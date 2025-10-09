@@ -128,3 +128,19 @@ end, { desc = "Yank symbol path" })
 
 -- Disable "q" for macro and "q:" for command history since I rarely use it
 vim.keymap.set({ "n", "v" }, "q", "<Nop>", { noremap = true, silent = true })
+
+
+-- Yank relative file paths of all files visible in the current window/tab
+vim.keymap.set("n", "<leader>fa", function()
+  local win_ids = vim.api.nvim_tabpage_list_wins(0)
+  local paths = {}
+  for _, win in ipairs(win_ids) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    local path = vim.api.nvim_buf_get_name(buf)
+    if path ~= "" then
+      table.insert(paths, "@" .. vim.fn.fnamemodify(path, ":."))
+    end
+  end
+  vim.fn.setreg("+", table.concat(paths, "\n"))
+end, { desc = "Yank visible relative file paths", silent = true })
+
