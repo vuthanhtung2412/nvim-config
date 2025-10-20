@@ -1,6 +1,6 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot",
+    // "lazyvim.plugins.extras.ai.copilot", // no need any more since CLI AI tools is getting good
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.coding.neogen",
     "lazyvim.plugins.extras.coding.yanky",
